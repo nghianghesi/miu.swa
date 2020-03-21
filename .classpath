@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="WebShopClient/src/main/java"/>
+	<classpathentry kind="src" path="WebShopClient/src/test/java"/>
+	<classpathentry kind="src" path="WebShopCustomers/src/main/java"/>
+	<classpathentry kind="src" path="WebShopCustomers/src/test/java"/>
+	<classpathentry kind="src" path="WebShopOrder/src/main/java"/>
+	<classpathentry kind="src" path="WebShopOrder/src/test/java"/>
+	<classpathentry kind="src" path="WebShopProducts/src/main/java"/>
+	<classpathentry kind="src" path="WebShopProducts/src/test/java"/>
+	<classpathentry kind="src" path="WebShopProtocol/src"/>
+	<classpathentry kind="src" path="WebShopShopping/src/main/java"/>
+	<classpathentry kind="src" path="WebShopShopping/src/test/java"/>
+	<classpathentry kind="lib" path="WebShopClient/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="WebShopCustomers/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="WebShopOrder/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="WebShopProducts/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="WebShopShopping/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
