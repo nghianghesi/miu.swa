@@ -6,7 +6,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.server.NotAcceptableStatusException;
 
 import shop.order.service.OrderDTO;
 import shop.shopping.service.ShoppingCartDTO;
@@ -28,7 +27,8 @@ public class OrderService implements shop.order.service.interfaces.OrderService{
 	
 	@Override
 	public void createOrder(ShoppingCartDTO shoppingCartDTO) {
-		throw new NotAcceptableStatusException("Not supported via service call");		
+		restTemplate.postForEntity(this.orderServiceUrl+"/order", shoppingCartDTO, OrderDTO.class).getBody();
+		return;
 	}
 	
 	@Override

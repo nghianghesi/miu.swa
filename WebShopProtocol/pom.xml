@@ -2,9 +2,9 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>edu.miu.swa.webhop.integration</artifactId>
-  <name>protocol</name>
-  <description>webhop.protocol</description>
+  <artifactId>edu.miu.swa.webshop.integration</artifactId>
+  <name>integration</name>
+  <description>webshop.integration</description>
 	<packaging>jar</packaging>
   <parent>
   	<artifactId>edu.miu.swa.webshop</artifactId>

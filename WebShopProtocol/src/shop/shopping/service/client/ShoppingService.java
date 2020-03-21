@@ -33,5 +33,10 @@ public class ShoppingService implements shop.shopping.service.interfaces.Shoppin
 		params.put("cartId", cartId);		
 		return restTemplate.getForEntity(this.shoppingServiceUrl+"/cart/{cartId}", ShoppingCartDTO.class, params).getBody();
 	}
-
+	
+	public ShoppingCartDTO checkout(String cartId) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("cartId", cartId);		
+		return restTemplate.getForEntity(this.shoppingServiceUrl+"/cart/checkout/{cartId}", ShoppingCartDTO.class, params).getBody();
+	}
 }

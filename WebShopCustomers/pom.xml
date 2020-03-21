@@ -16,7 +16,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>edu.miu.swa</groupId>
-			<artifactId>edu.miu.swa.webhop.integration</artifactId>
+			<artifactId>edu.miu.swa.webshop.integration</artifactId>
 			<version>${webshop.version}</version>
 		</dependency>
 		<dependency>

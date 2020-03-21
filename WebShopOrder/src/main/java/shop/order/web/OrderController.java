@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import shop.order.service.OrderDTO;
 import shop.order.service.OrderService;
+import shop.shopping.service.ShoppingCartDTO;
 
 @RestController
 public class OrderController {
@@ -26,6 +27,11 @@ public class OrderController {
 	@PostMapping("/order/{orderNumber}")
 	public void confirm(@PathVariable String orderNumber) {
 		orderService.confirm(orderNumber);
+	}
+	
+	@PostMapping("/order}")
+	public void confirm(@PathVariable ShoppingCartDTO shopcart) {
+		orderService.createOrder(shopcart);
 	}
 	
 	@PostMapping("/order/setCustomer/{orderNumber}/{customerNumber}")
