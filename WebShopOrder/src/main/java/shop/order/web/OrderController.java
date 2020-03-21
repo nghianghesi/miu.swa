@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import shop.order.service.OrderDTO;
@@ -30,7 +31,7 @@ public class OrderController {
 	}
 	
 	@PostMapping("/order}")
-	public void confirm(@PathVariable ShoppingCartDTO shopcart) {
+	public void place(@RequestBody ShoppingCartDTO shopcart) {
 		orderService.createOrder(shopcart);
 	}
 	
