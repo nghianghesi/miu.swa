@@ -24,7 +24,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>edu.miu.swa</groupId>
-			<artifactId>edu.miu.swa.webhop.protocol</artifactId>
+			<artifactId>edu.miu.swa.webhop.integration</artifactId>
 			<version>${webshop.version}</version>
 		</dependency>
 		<dependency>
