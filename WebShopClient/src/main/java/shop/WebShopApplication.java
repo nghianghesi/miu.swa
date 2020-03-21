@@ -137,7 +137,7 @@ public class WebShopApplication implements CommandLineRunner {
 		//call the order component to confirm the order
 		params = new HashMap<String, String>();
 		params.put("orderNumber", "101");		
-		order = restTemplate.postForEntity(this.orderServiceUrl+"{orderNumber}", null, OrderDTO.class, params).getBody();		
+		order = restTemplate.postForEntity(this.orderServiceUrl+"/order/{orderNumber}", null, OrderDTO.class, params).getBody();		
 		
 		//get the order
 		//call the order component to get the order and print the result
