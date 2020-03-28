@@ -23,6 +23,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>${spring-cloud.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>edu.miu.swa</groupId>
 			<artifactId>edu.miu.swa.webshop.integration</artifactId>
 			<version>${webshop.version}</version>
