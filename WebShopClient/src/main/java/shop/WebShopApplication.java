@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -11,14 +12,21 @@ import org.springframework.web.client.RestTemplate;
 
 import shop.customers.service.AddressDTO;
 import shop.customers.service.CustomerDTO;
-import shop.customers.service.client.CustomerService;
+import shop.customers.service.interfaces.CustomerService;
 import shop.order.service.OrderDTO;
-import shop.order.service.client.OrderService;
+import shop.order.service.interfaces.OrderService;
 import shop.products.service.ProductDTO;
-import shop.products.service.client.ProductCatalogService;
-import shop.shopping.service.client.ShoppingService;
+import shop.products.service.interfaces.ProductCatalogService;
+import shop.shopping.service.interfaces.CheckoutService;
+import shop.shopping.service.interfaces.ShoppingService;
 
 @SpringBootApplication
+@EnableFeignClients({
+	"shop.customers.service.feign",
+	"shop.products.service.feign", 
+	"shop.order.service.feign",
+	"shop.shopping.service.feign"
+})
 public class WebShopApplication implements CommandLineRunner {
 
 	@Autowired
@@ -33,6 +41,9 @@ public class WebShopApplication implements CommandLineRunner {
 	@Autowired
 	ShoppingService shoppingService;
 	
+	@Autowired
+	CheckoutService checkoutService;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebShopApplication.class, args);
@@ -45,26 +56,6 @@ public class WebShopApplication implements CommandLineRunner {
 		restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
 		return restTemplate;
 	}
-	
-	@Bean
-	CustomerService CreateCustomerServiceClient() {
-		return new CustomerService();
-	}		
-	
-	@Bean
-	ProductCatalogService CreateProductServiceClient() {
-		return new ProductCatalogService();
-	}
-	
-	@Bean
-	OrderService CreateOrderServiceClient() {
-		return new OrderService();
-	}
-	
-	@Bean
-	ShoppingService CreateShoppingServiceClient() {
-		return new ShoppingService();
-	}	
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -108,7 +99,7 @@ public class WebShopApplication implements CommandLineRunner {
 		this.shoppingService.getCart("101");
 		//checkout the cart		
 		//call the shopping component to checkout the cart 
-		shoppingService.checkout("101");		
+		this.checkoutService.checkout("101");		
 
 		//get the order
 		//call the order component to get the order and print the result

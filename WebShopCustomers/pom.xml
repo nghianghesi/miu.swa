@@ -15,11 +15,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-			<version>${spring-cloud.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>edu.miu.swa</groupId>
 			<artifactId>edu.miu.swa.webshop.integration</artifactId>
 			<version>${webshop.version}</version>
@@ -31,12 +26,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
