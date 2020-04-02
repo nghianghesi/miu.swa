@@ -1,4 +1,4 @@
-package shop;
+package edu.miu.mwa.config.clientB;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,9 +7,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients("shop.customers.service.feign")
-public class WebShopApplication{
+@EnableFeignClients
+public class ConfigClientBApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(WebShopApplication.class, args);
+		SpringApplication.run(ConfigClientBApplication.class, args);
 	}
+
 }
