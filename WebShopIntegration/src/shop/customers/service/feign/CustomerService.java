@@ -1,5 +1,6 @@
 package shop.customers.service.feign;
 
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import shop.customers.service.CustomerDTO;
 import shop.customers.service.OrderCustomerDTO;
 
 @FeignClient("WebShopCustomer")
+@RibbonClient("WebShopCustomer")
 public interface CustomerService extends shop.customers.service.interfaces.CustomerService{
 	@PostMapping("/customer")
 	public void addCustomer(CustomerDTO customer);

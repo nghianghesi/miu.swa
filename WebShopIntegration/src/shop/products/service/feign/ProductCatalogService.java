@@ -1,5 +1,6 @@
 package shop.products.service.feign;
 
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import shop.products.service.ProductDTO;
 
 @FeignClient("WebShopProduct")
+@RibbonClient("WebShopProduct")
 public interface ProductCatalogService extends shop.products.service.interfaces.ProductCatalogService{
 	
 	@PostMapping("/product/{productnumber}/{description}/{price}")
