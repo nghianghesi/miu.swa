@@ -16,7 +16,7 @@ import shop.shopping.service.ShoppingCartDTO;
 
 
 @Service
-public class OrderService {
+public class OrderService implements shop.order.service.interfaces.OrderService{
 	@Autowired
 	OrderRepository orderRepository;
 	@Autowired

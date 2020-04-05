@@ -12,7 +12,7 @@ import shop.shopping.domain.ShoppingCart;
 import shop.shopping.repository.ShoppingCartRepository;
 
 @Service
-public class ShoppingService {
+public class ShoppingService implements shop.shopping.service.interfaces.ShoppingService{
 	@Autowired
 	ProductCatalogService productCatalogService;
 	@Autowired

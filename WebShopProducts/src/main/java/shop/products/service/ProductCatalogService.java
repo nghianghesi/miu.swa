@@ -10,7 +10,7 @@ import shop.products.domain.Stock;
 import shop.products.repository.ProductRepository;
 
 @Service
-public class ProductCatalogService {
+public class ProductCatalogService implements shop.products.service.interfaces.ProductCatalogService{
 	@Autowired
 	ProductRepository productRepository;
 

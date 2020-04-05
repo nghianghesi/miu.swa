@@ -11,7 +11,7 @@ import shop.customers.repository.CustomerRepository;
 
 
 @Service
-public class CustomerService {
+public class CustomerService implements shop.customers.service.interfaces.CustomerService{
 	@Autowired
 	CustomerRepository customerRepository;	
 	
