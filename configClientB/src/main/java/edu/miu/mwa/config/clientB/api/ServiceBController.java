@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 @RestController
 public class ServiceBController {
 	
@@ -23,6 +25,7 @@ public class ServiceBController {
 	 }	 
 	 
 	 @RequestMapping("/a")
+	 @HystrixCommand(fallbackMethod = "getTextFallback")
 	 public String getAName() {
 		 return this.serviceA.getGreeting();
 	 }
@@ -30,6 +33,10 @@ public class ServiceBController {
 	 @RequestMapping("/ab")
 	 public String getABName() {
 		 return this.serviceA.getBGreeting();
+	 }
+	 
+	 public String getTextFallback() {
+		 return "Hello Histrix";
 	 }
 	 
 	 public static interface ServiceA{
