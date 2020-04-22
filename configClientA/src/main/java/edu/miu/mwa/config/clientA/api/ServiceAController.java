@@ -30,9 +30,16 @@ public class ServiceAController {
 		 return this.serviceB.getGreeting();
 	 }
 	 
+	 @RequestMapping("/ba")
+	 public String getBAGreeting() {
+		 return this.serviceB.getAGreeting();
+	 }
+	 
 	 public static interface ServiceB{
 		 @GetMapping()
 		 String getGreeting();
+		 @GetMapping("/a")
+		 String getAGreeting();
 	 }
 	 
 	 @ConditionalOnProperty(name = "feignclientsource", havingValue="direct", matchIfMissing = true)

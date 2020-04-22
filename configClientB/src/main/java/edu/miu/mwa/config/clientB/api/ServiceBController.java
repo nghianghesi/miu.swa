@@ -27,9 +27,16 @@ public class ServiceBController {
 		 return this.serviceA.getGreeting();
 	 }
 	 
+	 @RequestMapping("/ab")
+	 public String getABName() {
+		 return this.serviceA.getBGreeting();
+	 }
+	 
 	 public static interface ServiceA{
 		 @GetMapping("/")
 		 public String getGreeting();
+		 @GetMapping("/b")
+		 public String getBGreeting();
 	 }	 
 	 
 	 @ConditionalOnProperty(name = "feignclientsource", havingValue="direct", matchIfMissing = true)
