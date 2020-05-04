@@ -42,7 +42,8 @@ public class WebShopApplication implements CommandLineRunner {
 	ShoppingService shoppingService;
 	
 	@Autowired
-	CheckoutService checkoutService;	
+	CheckoutService checkoutService;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebShopApplication.class, args);
