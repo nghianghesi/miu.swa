@@ -32,7 +32,7 @@ public class OwnerService {
     public void receiveToofast(@Payload TooFastRecord car) 
     {
     	if(car.getSpeed() > 72) {
-    		System.out.println(car.getLicencePlate()+" " + car.getSpeed());
+    		System.out.println("Owner processing: " + car.getLicencePlate() + " " + car.getSpeed());
     		
     		for (Entry<Double, Double> entry : fines.entrySet()) {
     			if (entry.getKey() >= car.getSpeed()) {

@@ -41,7 +41,7 @@ public class SpeedService {
     		int diff = (car.getMinute() - previous.getMinute()) * 60 + car.getSecond() - previous.getSecond();
     		double speed =  0.5 / diff * 3600;
     		
-    		System.out.println(car.getLicencePlate()+" " + speed);
+    		System.out.println("Speed processing: " + car.getLicencePlate()+" " + speed);
     		
     		if (speed > 72) {
     			TooFastRecord toofastEvent = new TooFastRecord(car.getLicencePlate(), speed);
